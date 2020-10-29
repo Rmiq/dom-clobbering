@@ -35,8 +35,8 @@
 
 			const renderItem = (value) => {
 				const item = document.createElement("li");
-				// const clean = DOMPurify.sanitize(value);
-				item.innerHTML = value;
+				const clean = DOMPurify.sanitize(value);
+				item.innerHTML = clean;
 				list.appendChild(item);
 			};
 
