@@ -8,13 +8,15 @@
 			* {
 				font-family: sans-serif;
 			}
+
 			textarea {
 				display: block;
-                margin-bottom: 5px;
-                margin-top: 5px;
+				margin-bottom: 5px;
+				margin-top: 5px;
 			}
 		</style>
 	</head>
+
 	<body>
 		<h1>Hello World</h1>
 		<hr />
@@ -25,25 +27,25 @@
 			<textarea id="hello" type="text" rows="4" cols="50s"></textarea>
 			<input type="submit" />
 		</form>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
 		<script>
 			const form = document.querySelector("form");
 			const list = document.querySelector("ul");
 			const items = { ...localStorage };
 
-            const renderItem = (value) => {
-                const item = document.createElement("li");
-                // const clean = DOMPurify.sanitize(value);
-                item.innerHTML = value;
-                list.appendChild(item);
-            }
+			const renderItem = (value) => {
+				const item = document.createElement("li");
+				// const clean = DOMPurify.sanitize(value);
+				item.innerHTML = value;
+				list.appendChild(item);
+			};
 
 			window.onload = () => {
-                Object.keys(items).forEach((key) => {
-					renderItem(window.localStorage.getItem(key))
+				Object.keys(items).forEach((key) => {
+					renderItem(window.localStorage.getItem(key));
 				});
 
-                const analytics = window.analytics || { name: 'google', url: 'https://www.google-analytics.com/analytics.js'}
+				const analytics = window.analytics || { name: "google", url: "https://www.google-analytics.com/analytics.js" };
 				const script = document.createElement("script");
 				script.src = analytics.url;
 				document.body.appendChild(script);
